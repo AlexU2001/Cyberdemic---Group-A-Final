@@ -31,6 +31,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r268",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Platform",
 			"name": "Platform",
@@ -79,7 +87,8 @@
 			"JumpPart",
 			"Tilemap",
 			"Sprite",
-			"SpeedPart"
+			"SpeedPart",
+			"Text"
 		],
 		"subfolders": [
 			{
