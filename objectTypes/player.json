@@ -1,0 +1,48 @@
+{
+	"name": "Player",
+	"plugin-id": "Sprite",
+	"sid": 213516597291309,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "scrollto",
+			"name": "ScrollTo",
+			"sid": 663562454425612
+		},
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 306650580859755
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3606678,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 643471738282425,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
