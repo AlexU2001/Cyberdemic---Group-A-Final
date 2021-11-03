@@ -1,0 +1,30 @@
+{
+	"name": "RobotPartFamily",
+	"plugin-id": "Sprite",
+	"sid": 775861121832474,
+	"instanceVariables": [
+		{
+			"name": "TargetPartID",
+			"type": "number",
+			"desc": "",
+			"sid": 427285512684609
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 971549808899516
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 262256201809005
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"JumpPart",
+		"SpeedPart"
+	]
+}

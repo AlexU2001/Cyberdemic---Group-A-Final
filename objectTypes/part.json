@@ -1,16 +1,10 @@
 {
-	"name": "Player",
+	"name": "Part",
 	"plugin-id": "Sprite",
-	"sid": 213516597291309,
+	"sid": 950394388101939,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Platform",
-			"name": "Platform",
-			"sid": 306650580859755
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -24,24 +18,24 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3606678,
+						"imageSpriteId": 5940956,
+						"collisionPoly": {
+							"points": [
+								0.28,
+								0.28,
+								0.72,
+								0.28,
+								0.72,
+								0.72,
+								0.28,
+								0.72
+							]
+						},
 						"useCollisionPoly": true,
-						"imagePoints": [
-							{
-								"name": "JumpPart",
-								"x": 0,
-								"y": 0.5
-							},
-							{
-								"name": "HeadPart",
-								"x": 0.5,
-								"y": 0
-							}
-						],
 						"duration": 1
 					}
 				],
-				"sid": 643471738282425,
+				"sid": 668690182594110,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

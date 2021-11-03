@@ -1,5 +1,323 @@
 {
 	"name": "Event sheet 1",
-	"events": [],
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 326636423258195,
+					"parameters": {
+						"key": 82
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 648395730155011
+				}
+			],
+			"sid": 178973082952078
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 439394006716376
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "MoveCamera",
+					"sid": 451197732765421,
+					"parameters": [
+						"0.1"
+					]
+				}
+			],
+			"sid": 788669871577000
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Functions",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "MoveCamera",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "LerpValue",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 497809623046535
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Camera",
+							"sid": 205382837542691,
+							"parameters": {
+								"x": "lerp(Camera.X,Player.X,LerpValue)",
+								"y": "lerp(Camera.Y,Player.Y,LerpValue)"
+							}
+						}
+					],
+					"sid": 773939350932194
+				}
+			],
+			"sid": 915155708134378
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 240255946835942,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player",
+							"sid": 879764297821961,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player",
+							"sid": 604058543820806,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 642392747201693
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 587670808305114,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player",
+							"sid": 762700229996918,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player",
+							"sid": 952673249663575,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 285039341698298
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 533343635262093,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player",
+							"sid": 890641100825967,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						}
+					],
+					"sid": 984175327639215
+				}
+			],
+			"sid": 663782479086159
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Parts",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Tween",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 749856023091795
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-one-property",
+									"objectClass": "JumpPart",
+									"sid": 183417864296093,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"Hover\"",
+										"property": "offsetY",
+										"end-value": "JumpPart.Y + 5",
+										"time": "0.5",
+										"ease": "easeinoutquad",
+										"destroy-on-complete": "no",
+										"loop": "yes",
+										"ping-pong": "yes"
+									}
+								}
+							],
+							"sid": 637145466478132
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "RobotPartFamily",
+									"sid": 395700826411875,
+									"parameters": {
+										"object": "Player"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "pin-to-object-imagepoint",
+									"objectClass": "RobotPartFamily",
+									"sid": 164303336413699,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "Player",
+										"image-point": "RobotPartFamily.TargetPartID",
+										"angle": false,
+										"width-type": "no",
+										"height-type": "no",
+										"z": true
+									}
+								}
+							],
+							"sid": 135344838639302,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "RobotPartFamily",
+											"sid": 348089261280431,
+											"parameters": {
+												"instance-variable": "TargetPartID",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-double-jump",
+											"objectClass": "Player",
+											"sid": 473606759948888,
+											"behaviorType": "Platform",
+											"parameters": {
+												"state": "enabled"
+											}
+										}
+									],
+									"sid": 815789807069491
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "RobotPartFamily",
+											"sid": 343695981214405,
+											"parameters": {
+												"instance-variable": "TargetPartID",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-max-speed",
+											"objectClass": "Player",
+											"sid": 212286101562961,
+											"behaviorType": "Platform",
+											"parameters": {
+												"max-speed": "500"
+											}
+										}
+									],
+									"sid": 125711110592017
+								}
+							]
+						}
+					],
+					"sid": 512406321988668
+				}
+			],
+			"sid": 693753716345104
+		}
+	],
 	"sid": 843440326260657
 }
